@@ -1,8 +1,11 @@
 #include "simd_distance.h"
-#include <immintrin.h>
 #include <math.h>
 #include <stddef.h>
 #include <stdio.h>
+
+#if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)
+#include <immintrin.h>
+#endif
 
 // Function pointers for distance functions
 float (*simd_euclidean_ptr)(const float*, const float*, size_t);

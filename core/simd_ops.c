@@ -1,9 +1,12 @@
 #include "simd_ops.h"
 #include "simd_distance.h"
-#include <immintrin.h>
 #include <math.h>
 #include <stddef.h>
 #include <stdio.h>
+
+#if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)
+#include <immintrin.h>
+#endif
 
 // Function pointer for the normalization function
 void (*simd_normalize_ptr)(float*, size_t);

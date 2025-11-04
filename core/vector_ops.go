@@ -1,7 +1,8 @@
 package core
 
 /*
-#cgo CFLAGS: -O2 -mavx
+#cgo amd64 CFLAGS: -O2 -mavx -mavx2
+#cgo arm64 CFLAGS: -O2
 #cgo LDFLAGS: -lm
 #include "simd_ops.h"
 */
